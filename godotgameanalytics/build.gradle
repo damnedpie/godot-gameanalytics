@@ -1,0 +1,51 @@
+apply plugin: 'com.android.library'
+
+ext.pluginVersionCode = 1
+ext.pluginVersionName = "6.6.2"
+
+android {
+    compileSdk 33
+    namespace "com.gameanalytics.godotgameanalytics"
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 33
+        versionCode pluginVersionCode
+        versionName pluginVersionName
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    ndkVersion '23.2.8568313'
+    buildToolsVersion '34.0.0'
+    libraryVariants.configureEach { variant ->
+        variant.outputs.all { output ->
+            output.outputFileName = "GodotGameAnalytics.$pluginVersionName.${variant.name}.aar"
+        }
+    }
+}
+
+dependencies {
+    implementation 'com.gameanalytics.sdk:gameanalytics-android:6.6.2'
+    implementation 'com.google.android.gms:play-services-appset:16.1.0'
+    implementation 'androidx.appcompat:appcompat:1.7.0'
+    compileOnly fileTree(dir: 'libs', includes: ['godot-lib*.aar'])
+
+}
+
+tasks.register('buildIntoRelease', Copy) {
+    group = "build"
+    dependsOn tasks.build
+    from([buildDir.absolutePath, 'outputs', 'aar'].join(File.separator))
+    include("GodotGameAnalytics.${pluginVersionName}.release.aar")
+    into([rootDir.absolutePath, 'release'].join(File.separator))
+}

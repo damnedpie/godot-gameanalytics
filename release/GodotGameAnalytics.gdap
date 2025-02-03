@@ -1,0 +1,13 @@
+[config]
+
+name="GodotGameAnalytics"
+binary_type="local"
+binary="GodotGameAnalytics.6.6.2.release.aar"
+
+[dependencies]
+
+remote=[
+	"com.gameanalytics.sdk:gameanalytics-android:6.6.2",
+	"com.google.android.gms:play-services-appset:16.1.0",
+]
+custom_maven_repos=["https://maven.gameanalytics.com/release"]
