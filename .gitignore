@@ -3,3 +3,6 @@ local.properties
 *.iml
 .gradle/
 .idea/
+github-meta.txt
+release/*.zip
+libs/

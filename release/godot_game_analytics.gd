@@ -12,7 +12,7 @@ const SECRET_KEY : String = ""
 func output(message) -> void:
 	print("%s: %s" % [name, message])
 
-func _ready() -> void:
+func initialize() -> void:
 	if Engine.has_singleton("GameAnalytics"):
 		_gameAnalytics = Engine.get_singleton("GameAnalytics")
 
@@ -100,7 +100,9 @@ func setGlobalCustomEventFields(customFields:String) -> void:
 
 # Initializes the SDK
 func init(gameKey:String, secretKey:String) -> void:
-	_gameAnalytics.init(gameKey, secretKey)
+	var versionInfo : Dictionary = Engine.get_version_info()
+	var versionString = "%s.%s.%s" % [versionInfo["major"], versionInfo["minor"], versionInfo["patch"]]
+	_gameAnalytics.init(gameKey, secretKey, versionString)
 
 # Event logging: https://docs.gameanalytics.com/event-types/
 # Godot examples: https://github.com/GameAnalytics/GA-SDK-GODOT/blob/master/example/main_scene.gd#L49
@@ -173,6 +175,11 @@ func addErrorEvent(options:Dictionary) -> void:
 #	"mergeFields" : bool (optional, false by default)
 func addAdEvent(options:Dictionary) -> void:
 	_gameAnalytics.addAdEvent(options)
+
+# Adds an ILRD event: https://docs.gameanalytics.com/integrations/advertising/admob
+# Currently testing it; custom fields are not yet supported by the plugin.
+func addImpressionEvent(networkName:String, networkVersion:String, options:Dictionary) -> void:
+	_gameAnalytics.addImpressionEvent(networkName, networkVersion, options)
 
 # Custom Dimensions: https://docs.gameanalytics.com/advanced-tracking/custom-dimensions/
 func setCustomDimension01(dimension:String) -> void:
