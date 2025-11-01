@@ -1,10 +1,10 @@
-# Godot GameAnalytics 6.6.3 SDK
+# Godot GameAnalytics 7.0.0 SDK
 [![Godot](https://img.shields.io/badge/Godot%20Engine-3.6.2-blue?style=for-the-badge&logo=godotengine&logoSize=auto)](https://godotengine.org/)
-[![GameAnalytics](https://img.shields.io/badge/GameAnalytics_6.6.3-black?style=for-the-badge&logoSize=auto)](https://gameanalytics.com/)
+[![GameAnalytics](https://img.shields.io/badge/GameAnalytics_7.0.0-black?style=for-the-badge&logoSize=auto)](https://gameanalytics.com/)
 [![GitHub License](https://img.shields.io/github/license/damnedpie/godot-gameanalytics?style=for-the-badge)](https://github.com/damnedpie/godot-gameanalytics/blob/main/LICENSE)
 [![GitHub Repo stars](https://img.shields.io/github/stars/damnedpie/godot-gameanalytics?style=for-the-badge&logo=github&logoSize=auto&color=%23FFD700)](https://github.com/damnedpie/godot-gameanalytics/stargazers)
 
-GameAnalytics 6.6.3 SDK Android plugin for Godot. Built on Godot 3.6.2 dependency.
+GameAnalytics 7.0.0 SDK Android plugin for Godot. Built on Godot 3.6.2 dependency.
 
 ## Author's note
 
