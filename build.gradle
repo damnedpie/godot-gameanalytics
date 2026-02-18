@@ -3,7 +3,7 @@ plugins {
 }
 
 ext.pluginVersionCode = 1
-ext.pluginVersionName = "7.0.0"
+ext.pluginVersionName = "7.0.1"
 ext.zipName = "godot-gameanalytics"
 ext.godotVersion = "3.6.2"
 
@@ -44,7 +44,7 @@ dependencies {
     //compileOnly fileTree(dir:"libs", include:["godot-lib.release.aar"])
     // Intended way of getting Godot dependencies
     compileOnly 'org.godotengine:godot:3.6.2.stable'
-    compileOnly 'com.gameanalytics.sdk:gameanalytics-android:7.0.0'
+    compileOnly 'com.gameanalytics.sdk:gameanalytics-android:7.0.1'
     compileOnly 'com.google.android.gms:play-services-appset:16.1.0'
 }
 

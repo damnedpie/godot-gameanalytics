@@ -2,12 +2,12 @@
 
 name="GodotGameAnalytics"
 binary_type="local"
-binary="GodotGameAnalytics.7.0.0.release.aar"
+binary="GodotGameAnalytics.7.0.1.release.aar"
 
 [dependencies]
 
 remote=[
-	"com.gameanalytics.sdk:gameanalytics-android:7.0.0",
+	"com.gameanalytics.sdk:gameanalytics-android:7.0.1",
 	"com.google.android.gms:play-services-appset:16.1.0",
 ]
 custom_maven_repos=["https://maven.gameanalytics.com/release"]
